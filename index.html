@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Urvishkumar Badreshiya: one operations case, opened to closed, for the Operations Specialist (Hindi speaking) role in Dubai.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23001489'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='24' text-anchor='middle' fill='white'%3EUB%3C/text%3E%3C/svg%3E">
+<title>One Case, Opened to Closed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Mulish:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout concept: a trading-floor space in a broker's navy. One operations case moves through five statuses, and a live console holds the proof. */
+:root{
+  color-scheme:light;
+  --bg:#ffffff; --deep:#ffffff; --glass:#ffffff; --glass-2:#ffffff; --line:#dfe5f2;
+  --fg:#0b1547; --muted:#4d587f; --brand:#001489; --blue:#0068e3; --sky:#0f9cdb; --signal:#0068e3;
+  --tint:#f3f6fc; --royal:#001489; --buy:#2fa84f; --sell:#d9262b;
+  --display:'Poppins','Segoe UI',system-ui,sans-serif; --body:'Mulish','Segoe UI',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.65 var(--body);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--deep)}
+.env{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:radial-gradient(ellipse 90% 60% at 18% 8%,rgba(10,122,255,.42),transparent 65%),radial-gradient(ellipse 80% 60% at 88% 92%,rgba(0,178,255,.2),transparent 60%),var(--bg)}
+.wall{position:absolute;left:-12%;width:124%;top:3vh;height:58vh;opacity:.5;transform:perspective(1400px) rotateX(8deg);transform-origin:50% 100%;-webkit-mask-image:radial-gradient(ellipse 60% 70% at 50% 45%,#000 20%,transparent 78%);mask-image:radial-gradient(ellipse 60% 70% at 50% 45%,#000 20%,transparent 78%)}
+.floor{position:absolute;left:-60%;width:220%;top:62vh;height:70vh;transform-origin:50% 0;transform:perspective(560px) rotateX(76deg);background-image:linear-gradient(rgba(0,20,137,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(0,20,137,.16) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:linear-gradient(#000,transparent 80%);mask-image:linear-gradient(#000,transparent 80%)}
+.motes{position:absolute;inset:0;width:100%;height:100%}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+section{padding-block:80px}
+h1,h2,h3{font-family:var(--display);line-height:1.12;text-wrap:balance;margin:0}
+h1{font-size:clamp(2.6rem,7vw,5.4rem);font-weight:800;letter-spacing:-.03em}
+h1 em{font-style:normal;color:var(--signal)}
+h2{font-size:clamp(1.8rem,3.8vw,2.9rem);font-weight:700;letter-spacing:-.015em}
+h3{font-size:1.14rem;font-weight:600}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+.lede{max-width:64ch;color:var(--muted);margin-top:14px}
+.eyebrow{font:500 .78rem/1.4 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--signal)}
+.glass{background:var(--glass);border:1px solid var(--line);border-radius:14px;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.topbar .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:center;justify-content:space-between;padding-block:18px}
+.name{font:600 1rem/1.3 var(--display);white-space:nowrap}
+.topbar nav{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:.9rem}
+.topbar nav a{color:var(--muted);text-decoration:none}
+.topbar nav a:hover{color:var(--fg)}
+/* Hero */
+.hero{padding-block:44px 30px;text-align:center}
+.hero .eyebrow{margin-bottom:18px}
+.hero .lede{margin:22px auto 0;font-size:1.13rem}
+.contact{display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:center;margin-top:24px;font-size:.93rem;color:var(--muted)}
+.contact a{text-decoration:none}
+.cta{display:inline-block;margin-top:26px;padding:13px 30px;border-radius:9999px;background:var(--signal);color:#000850;font:600 .95rem/1.2 var(--display);text-decoration:none;transition:transform .2s cubic-bezier(.2,.8,.2,1)}
+.cta:hover{transform:translateY(-2px)}
+.stage3d{perspective:1800px;margin-top:52px}
+.console{display:grid;grid-template-columns:64px minmax(0,1fr);text-align:left;overflow:hidden;background:var(--glass-2);box-shadow:0 50px 120px rgba(0,5,47,.7);transform-origin:50% 0}
+.rail{display:flex;flex-direction:column;align-items:center;gap:18px;padding:20px 0;border-right:1px solid var(--line);color:var(--muted)}
+.rail svg{width:22px;height:22px}
+.rail i{display:grid;place-items:center;width:38px;height:38px;border-radius:10px}
+.rail i.on{background:var(--blue);color:#fff}
+.con-main{padding:22px;min-width:0;display:grid;gap:18px}
+.con-head{display:flex;flex-wrap:wrap;gap:8px 14px;justify-content:space-between;align-items:center;font:400 .84rem/1.4 var(--mono);color:var(--muted)}
+.pill{background:var(--signal);color:#000850;border-radius:9999px;padding:2px 12px;font-weight:500}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.kpi{border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-width:0}
+.kpi b{display:block;font:700 1.75rem/1.1 var(--display);font-variant-numeric:tabular-nums}
+.kpi span{font-size:.8rem;color:var(--muted);line-height:1.35;display:block;margin-top:4px}
+.con-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:12px}
+.panel{border:1px solid var(--line);border-radius:10px;padding:14px;min-width:0}
+.panel-t{font:500 .72rem/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.bars{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;align-items:end;height:128px}
+.bar{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;gap:4px;font:400 .72rem/1 var(--mono);color:var(--muted)}
+.bar i{display:block;width:100%;max-width:44px;border-radius:5px 5px 0 0;background:linear-gradient(var(--signal),var(--blue));transform-origin:bottom}
+.bar b{font-weight:500;color:var(--fg)}
+.queue{list-style:none;margin:0;padding:0;display:grid;gap:7px;font-size:.86rem}
+.queue li{display:flex;justify-content:space-between;gap:10px;padding-bottom:7px;border-bottom:1px solid var(--line)}
+.queue li:last-child{border:0;padding:0}
+.queue span{color:var(--muted);text-align:right;font-size:.8rem}
+/* Track */
+.track{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:rgba(0,5,47,.82);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-block:1px solid var(--line);margin-top:50px}
+.track ol{list-style:none;margin:0;padding-block:12px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;font:500 .74rem/1.3 var(--mono)}
+.track li{padding-top:7px;border-top:3px solid var(--line);color:var(--muted);transition:border-color .25s,color .25s}
+.track li.on{border-color:var(--signal);color:var(--fg)}
+/* Stages */
+.pipeline{position:relative;margin-top:36px;display:grid;gap:22px}
+.stage{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:28px;padding:28px;align-items:center}
+.stage-tag{font:500 .8rem/1.4 var(--mono);color:var(--signal);margin-bottom:8px}
+.stage h3{font-size:1.45rem;margin-bottom:10px}
+.stage p+p{margin-top:12px}
+.stage p{color:var(--muted)}
+.stage>div{min-width:0}
+.viz{display:block;width:100%;height:auto;max-height:230px}
+.viz text{font-family:var(--mono);font-size:11px;fill:var(--muted)}
+.viz .hi{fill:var(--signal)}
+.viz .w{fill:var(--fg)}
+.wide{grid-column:1/-1}
+.table-scroll{overflow-x:auto;margin-top:6px}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+th{font:500 .74rem/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;text-align:left;color:var(--muted);padding:10px 14px 10px 0;border-bottom:2px solid var(--signal)}
+td{padding:12px 14px 12px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{font-weight:600}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:.9rem}
+.quote{margin-top:14px;padding-left:16px;border-left:3px solid var(--signal);font-family:var(--display);font-weight:500;color:var(--fg)!important}
+/* Rings */
+.rings{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:30px}
+.ring{display:grid;justify-items:center;text-align:center;gap:10px}
+.ring-box{position:relative;width:132px;height:132px;max-width:100%}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:9}
+.ring .bg{stroke:var(--line)}
+.ring .fg{stroke:var(--signal);stroke-linecap:round}
+.ring-val{position:absolute;inset:0;display:grid;place-items:center;font:600 1.3rem/1 var(--display);font-variant-numeric:tabular-nums}
+.ring p{font-size:.9rem;color:var(--muted);line-height:1.45;max-width:24ch}
+/* Client seat */
+.seat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:30px}
+.seat>div{min-width:0;padding:22px}
+.seat .eyebrow{display:block;margin-bottom:6px}
+.seat p{color:var(--muted);margin-top:8px;font-size:.97rem}
+/* Journal */
+.journal{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;margin-top:30px}
+.heat{padding:22px;overflow-x:auto}
+.heat-grid{display:grid;grid-auto-flow:column;grid-template-rows:repeat(7,14px);grid-auto-columns:14px;gap:4px;width:max-content;margin-top:6px}
+.heat-grid i{border-radius:3px;background:rgba(160,190,255,.12)}
+.heat-grid i.l1{background:rgba(29,228,245,.35)}
+.heat-grid i.l2{background:rgba(29,228,245,.62)}
+.heat-grid i.l3{background:var(--signal)}
+.heat-legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:12px;font-size:.84rem;color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.fact{padding:16px 18px;min-width:0}
+.fact b{display:block;font:700 1.6rem/1.1 var(--display)}
+.fact span{font-size:.86rem;color:var(--muted);display:block;margin-top:4px;line-height:1.4}
+.learn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:30px}
+.lesson{padding:24px;min-width:0;display:grid;gap:12px;align-content:start}
+.lesson p{color:var(--muted);font-size:.97rem}
+.lesson .so{color:var(--fg);border-top:1px solid var(--line);padding-top:10px}
+/* Research */
+/* Route */
+.route{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px;margin-top:30px}
+.route-text p{padding:14px 0 14px 18px;border-left:3px solid var(--line);color:var(--muted);transition:border-color .25s,color .25s}
+.route-text p.on{border-color:var(--signal);color:var(--fg)}
+.route-text b{color:var(--fg);font-family:var(--display);font-weight:600;display:block;font-size:.98rem}
+.route-card{position:sticky;top:96px;align-self:start;padding:20px}
+.route-card svg{display:block;width:100%;height:auto}
+.path-bg{fill:none;stroke:var(--line);stroke-width:3}
+.path-fg{fill:none;stroke:var(--signal);stroke-width:3}
+.route-list{list-style:none;margin:14px 0 0;padding:0;font-size:.88rem;display:grid;gap:5px}
+.route-list li{display:flex;gap:9px;align-items:baseline;color:var(--muted);transition:color .25s}
+.route-list li::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;background:var(--line);transition:background .25s}
+.route-list li.on{color:var(--fg);font-weight:600}
+.route-list li.on::before{background:var(--signal)}
+/* Cases and habits */
+.cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:30px}
+.case{padding:24px;min-width:0}
+.case .eyebrow{display:block;margin-bottom:8px}
+.case p{margin-top:10px;font-size:.98rem;color:var(--muted)}
+.habits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:30px}
+.habit{padding:20px;min-width:0;transition:background .22s,transform .22s cubic-bezier(.2,.8,.2,1)}
+.habit p{font-size:.95rem;margin-top:8px;color:var(--muted)}
+.habit small{display:block;margin-top:10px;font:400 .78rem/1.45 var(--mono);color:var(--muted);transition:opacity .22s,color .22s}
+@media (hover:hover){
+  .habit small{opacity:.5}
+  .habit:hover,.habit:focus-visible{background:rgba(10,122,255,.45);transform:translateY(-3px)}
+  .habit:hover small,.habit:focus-visible small{opacity:1;color:var(--signal)}
+}
+/* Plan */
+.plan-bar{position:relative;height:10px;background:var(--line);border-radius:9999px;margin-top:30px;overflow:hidden}
+.plan-bar i{position:absolute;inset:0;background:linear-gradient(90deg,var(--blue),var(--signal));transform-origin:left;border-radius:9999px}
+.plan{display:grid;grid-template-columns:15fr 15fr 30fr 30fr;gap:18px;margin-top:16px}
+.plan>div{min-width:0}
+.plan h3{margin-top:4px}
+.plan p{font-size:.93rem;color:var(--muted);margin-top:6px}
+/* FAQ */
+.faq{margin-top:26px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;padding:16px 0;font:600 1.05rem/1.35 var(--display)}
+.faq .answer{padding:0 0 20px;max-width:72ch;color:var(--muted)}
+.faq .answer p+p{margin-top:10px}
+.bring{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 26px}
+.bring b{font-family:var(--display);font-weight:600;display:block;color:var(--fg)}
+.closing{padding-block:70px;background:rgba(0,5,47,.6);text-align:center}
+.closing h2{max-width:26ch;margin:0 auto}
+.fine{margin-top:28px;font-size:.8rem;color:var(--muted)}
+@media (max-width:900px){
+  section{padding-block:56px}
+  .route,.cases,.seat,.stage,.learn,.research,.con-grid{grid-template-columns:minmax(0,1fr)}
+  .route-card{position:static;order:-1}
+  .rings,.kpis,.facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .habits{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .plan{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .console{grid-template-columns:minmax(0,1fr)}
+  .rail{display:none}
+  .stage{padding:22px}
+}
+@media (max-width:540px){
+  .habits,.plan,.bring{grid-template-columns:minmax(0,1fr)}
+  .track ol{font-size:.62rem}
+  .name{white-space:normal}
+  .con-main{padding:14px}
+}
+
+/* TMGM site treatment */
+.top{position:relative;overflow:hidden;isolation:isolate}
+.env{position:absolute;inset:0;z-index:-1;background:linear-gradient(165deg,#a9bbd8 0%,#cfdbec 42%,#eef2fa 78%,#fff 100%)}
+.wall{opacity:.42}
+.iso{position:absolute;right:-30px;top:30px;width:min(46vw,560px);height:auto;opacity:.9}
+.topbar{background:#fff;box-shadow:0 1px 0 var(--line);position:relative}
+.topbar nav a{color:var(--brand);font-weight:600}
+.hero .lede,.hero .contact{color:#1c2a66}
+h1,h2{color:var(--brand)}
+h1 em{color:var(--blue)}
+.eyebrow{color:var(--blue)}
+.cta{background:linear-gradient(90deg,#001489,#0068e3);color:#fff}
+.glass{background:#fff;border:1px solid var(--line);border-radius:14px;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 10px 30px rgba(0,20,137,.07)}
+.console{box-shadow:0 40px 90px rgba(0,20,137,.28)}
+.rail{background:var(--brand);color:#c1cae6;border-right:0}
+.rail i.on{background:#0068e3}
+.pill{background:var(--buy);color:#fff}
+.bar i{background:linear-gradient(#0f9cdb,#001489)}
+.kpi b{color:var(--brand)}
+.track{background:rgba(255,255,255,.94);margin-top:50px}
+.track li.on{border-color:var(--brand);color:var(--brand)}
+.viz text{fill:var(--muted)}
+.viz .hi{fill:#0068e3}
+.viz .w{fill:#0b1547}
+.quote{color:var(--brand)!important}
+.ring .fg{stroke:#0068e3}
+.ring-val{color:var(--brand)}
+.heat-grid i{background:#edf1f8}
+.heat-grid i.l1{background:#a9c9f3}
+.heat-grid i.l2{background:#3d8eea}
+.heat-grid i.l3{background:#001489}
+.route-list li.on::before{background:var(--blue)}
+.habit:hover,.habit:focus-visible{background:var(--royal)!important;color:#fff}
+.habit:hover p,.habit:focus-visible p{color:#c1cae6}
+.habit:hover small,.habit:focus-visible small{color:#1de4f5!important}
+.plan-bar i{background:linear-gradient(90deg,#001489,#0068e3)}
+.faq summary{color:var(--brand)}
+/* Section rhythm: white, pale, royal */
+.tinted,#brief,#cases{background:var(--tint)}
+.royal,#seat,.closing{--fg:#ffffff;--muted:#c1cae6;--line:rgba(255,255,255,.24);--signal:#1de4f5;background:var(--royal);color:#fff}
+#seat h2,.closing h2{color:#fff}
+#seat .eyebrow{color:#1de4f5}
+#seat .glass{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.24);box-shadow:none}
+#seat .glass>div{border-color:#1de4f5}
+.closing .contact,.fine{color:#c1cae6}
+.hero{text-align:left}
+.hero h1{font-size:clamp(2.4rem,5.2vw,4.1rem);max-width:14ch}
+.hero .lede{margin-left:0;max-width:52ch}
+.hero .contact{justify-content:flex-start}
+.iso{top:64px}
+@media (max-width:900px){.iso{display:none}.hero h1{max-width:none}}
+</style>
+</head>
+<body>
+
+
+<div class="top">
+<div class="env" aria-hidden="true">
+  <canvas class="wall" id="wall"></canvas>
+  <div class="floor" id="floor"></div>
+  <svg class="iso" id="iso" viewBox="0 0 560 420" aria-hidden="true">
+    <defs><linearGradient id="isoA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f9cdb"/><stop offset="1" stop-color="#001489"/></linearGradient></defs>
+    <g><polygon points="120,300 240,240 360,300 240,360" fill="#dfe7f3"/><polygon points="120,300 240,360 240,410 120,350" fill="url(#isoA)"/><polygon points="360,300 240,360 240,410 360,350" fill="#001489"/></g>
+    <g><polygon points="250,190 350,140 450,190 350,240" fill="#eef2fa"/><polygon points="250,190 350,240 350,350 250,300" fill="url(#isoA)"/><polygon points="450,190 350,240 350,350 450,300" fill="#001489"/></g>
+    <g><polygon points="400,90 480,50 560,90 480,130" fill="#fff"/><polygon points="400,90 480,130 480,300 400,260" fill="url(#isoA)"/><polygon points="560,90 480,130 480,300 560,260" fill="#001489"/></g>
+  </svg>
+  <canvas class="motes" id="motes"></canvas>
+</div>
+
+<header class="topbar">
+  <div class="wrap">
+    <span class="name">Urvishkumar Badreshiya</span>
+    <nav aria-label="Page sections">
+      <a href="#case">The case</a>
+      <a href="#seat">Client's seat</a>
+      <a href="#journal">Journal</a>
+      <a href="#brief">Brief</a>
+      <a href="#plan">90 days</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Operations Specialist, Hindi speaking · Dubai</p>
+    <h1>A case stays mine until the <em>records agree.</em></h1>
+    <p class="lede">Eight years in factory and restaurant operations taught me to follow a problem to the end. Since 2023 I have also traded on margin as a client, and logged what I learned. An operator's discipline with a client's view: this page runs both through the five statuses of one case.</p>
+    <a class="cta" href="#case">Open the case</a>
+    <div class="contact">
+      <a href="mailto:urvish.mb@gmail.com">urvish.mb@gmail.com</a>
+      <span>+91 99988 28555</span>
+      <a href="https://www.linkedin.com/in/urvishkumar-badreshiya">linkedin.com/in/urvishkumar-badreshiya</a>
+    </div>
+    <div class="stage3d">
+      <div class="console glass" id="console" aria-label="Summary console">
+        <div class="rail" aria-hidden="true">
+          <i class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg></i>
+          <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></i>
+          <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" stroke-linecap="round"/></svg></i>
+          <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 4 6v6c0 5 3.4 9.3 8 10 4.6-.7 8-5 8-10V6l-8-4z"/></svg></i>
+        </div>
+        <div class="con-main">
+          <div class="con-head"><span>Case file · Urvishkumar Badreshiya · MENA client operations</span><span>Status <span class="pill">Open</span></span></div>
+          <div class="kpis">
+            <div class="kpi"><b>8</b><span>years running operations</span></div>
+            <div class="kpi"><b>232</b><span>live-market trades journalled</span></div>
+            <div class="kpi"><b>546</b><span>manual backtest trades logged</span></div>
+            <div class="kpi"><b>99.9%</b><span>last full site audit</span></div>
+          </div>
+          <div class="con-grid">
+            <div class="panel">
+              <p class="panel-t">Journal trades by month, 2026</p>
+              <div class="bars" id="bars">
+                <div class="bar"><b>11</b><i style="height:16%"></i>Apr</div>
+                <div class="bar"><b>47</b><i style="height:69%"></i>May</div>
+                <div class="bar"><b>68</b><i style="height:100%"></i>Jun</div>
+                <div class="bar"><b>42</b><i style="height:62%"></i>Jul</div>
+                <div class="bar"><b>42</b><i style="height:62%"></i>Aug</div>
+                <div class="bar"><b>22</b><i style="height:32%"></i>Sep</div>
+              </div>
+            </div>
+            <div class="panel">
+              <p class="panel-t">Profile</p>
+              <ul class="queue">
+                <li>Languages <span>Hindi, English, Gujarati</span></li>
+                <li>Markets <span>Client since 2023</span></li>
+                <li>Platforms <span>MT5, Binance, Bybit, TradingView</span></li>
+                <li>Start <span>Immediately</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<div class="track" aria-hidden="true">
+  <div class="wrap">
+    <ol id="trackLabels">
+      <li>1 Open</li><li>2 Watch</li><li>3 Escalate</li><li>4 Reconcile</li><li>5 Close</li>
+    </ol>
+  </div>
+</div>
+
+<section id="case">
+  <div class="wrap">
+    <h2>One case, opened to closed</h2>
+    <p class="lede">The food and stock are different from client accounts. The sequence of the work is the same, so each status below shows where I have already done it.</p>
+    <div class="pipeline">
+
+      <article class="stage glass" data-stage>
+        <div>
+          <p class="stage-tag">1 · Open: verify</p>
+          <h3>Check the documents before anything starts</h3>
+          <p>UK employers must see proof of a person's right to work before they start. I checked and filed ID and visa documents for new hires. Onboarding a client follows the same order of steps, with different documents and rules.</p>
+          <p>From the other side of the counter, I completed KYC as a Binance client and funded my own account, so I have also been the person waiting for approval.</p>
+        </div>
+        <svg class="viz anim" viewBox="0 0 320 180" role="img" aria-label="A document with three checks completed">
+          <rect x="20" y="20" width="170" height="130" rx="10" fill="rgba(10,122,255,.25)" stroke="rgba(160,190,255,.5)"/>
+          <circle cx="58" cy="62" r="20" fill="rgba(29,228,245,.3)"/>
+          <rect x="90" y="46" width="84" height="8" rx="4" fill="rgba(0,20,137,.7)"/><rect x="90" y="62" width="62" height="8" rx="4" fill="rgba(0,20,137,.4)"/>
+          <rect x="38" y="100" width="134" height="7" rx="3.5" fill="rgba(0,20,137,.3)"/><rect x="38" y="118" width="100" height="7" rx="3.5" fill="rgba(0,20,137,.3)"/>
+          <g fill="none" stroke="#0068e3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path class="draw" d="M216 48l8 8 16-18"/><path class="draw" d="M216 88l8 8 16-18"/><path class="draw" d="M216 128l8 8 16-18"/>
+          </g>
+          <text x="250" y="52" class="w">ID</text><text x="250" y="92" class="w">Status</text><text x="250" y="132" class="w">Filed</text>
+        </svg>
+      </article>
+
+      <article class="stage glass" data-stage>
+        <div>
+          <p class="stage-tag">2 · Watch: monitor</p>
+          <h3>Look before anyone reports a problem</h3>
+          <p>Shake Shack sets a 13-point travel path: a fixed walk from the front door through the dining room, kitchen, chillers and staff area. I walked it every 1.5 to 2 hours, so a shortage or a compliance slip showed up early.</p>
+          <p>A live queue of accounts needs the same routine, run on a schedule with no reminder from anyone.</p>
+        </div>
+        <svg class="viz" id="pathViz" viewBox="0 0 320 180" role="img" aria-label="Thirteen checkpoints on a looped path"></svg>
+      </article>
+
+      <article class="stage glass" data-stage>
+        <div>
+          <p class="stage-tag">3 · Escalate</p>
+          <h3>Know which problems should leave your desk</h3>
+          <p>I investigated till, stock and refund irregularities through to an outcome, and kept formal records under the framework from Croner, the UK employment-law adviser. Anything unusual or risky went to the area manager, HR or head office.</p>
+        </div>
+        <svg class="viz anim" viewBox="0 0 320 180" role="img" aria-label="A flag rising through three levels of escalation">
+          <g fill="rgba(10,122,255,.25)" stroke="rgba(160,190,255,.5)">
+            <rect x="20" y="130" width="130" height="34" rx="8"/><rect x="95" y="78" width="130" height="34" rx="8"/><rect x="170" y="26" width="130" height="34" rx="8"/>
+          </g>
+          <text x="38" y="152" class="w">Investigated</text><text x="110" y="100" class="w">Area manager, HR</text><text x="196" y="48" class="w">Head office</text>
+          <path class="draw" d="M150 130 C165 124 150 112 160 112M225 78 C240 72 225 60 235 60" fill="none" stroke="#0068e3" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </article>
+
+      <article class="stage glass" data-stage>
+        <div class="wide">
+          <p class="stage-tag">4 · Reconcile</p>
+          <h3>When two records disagree, find out which one is true</h3>
+          <p>My own trading records gave me four good examples. In each one a screen said one thing and the source data said another.</p>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>Records compared</th><th>What differed</th><th>What I did</th></tr></thead>
+              <tbody>
+                <tr><td>Prop firm's dashboard vs exchange order history</td><td>Opening time wrong by over a day. Same trade showed <span class="num">−$68.14</span> and <span class="num">−$67.76</span>, from different fee treatment</td><td>Made the exchange the only source for my journal</td></tr>
+                <tr><td>Journal timestamps vs price candles</td><td>Account set to UTC, entries stored at UTC+5:30</td><td>Proved the offset against exchange candles, then read every time on that basis</td></tr>
+                <tr><td>Logged results vs exchange data</td><td>5 wins in a 100-trade backtest were losses on the data</td><td>Recorded it as a bias that flattered my own result</td></tr>
+                <tr><td>Advertised fee vs real fill</td><td>Promotional rate expected, <span class="num">0.055%</span> charged on both sides</td><td>Checked one live fill, then costed the results again at standard fees</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+
+      <article class="stage glass" data-stage>
+        <div>
+          <p class="stage-tag">5 · Close</p>
+          <h3>Close it so a stranger can follow the file</h3>
+          <p>I built a complaints and delivery tracker covering six sites, so each problem had a written record. Records also have to hold up on the day an auditor reads them. In my last week at Shake Shack Birmingham, the inspector left this note:</p>
+          <p class="quote">"A near perfectly managed Shack!"</p>
+        </div>
+        <svg class="viz" id="sitesViz" viewBox="0 0 320 180" role="img" aria-label="Six sites, each with a complaints tab and a delivery tab"></svg>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="seat">
+  <div class="wrap">
+    <h2>From the client's seat</h2>
+    <p class="lede">A Hindi-speaking client who calls about margin, swap or a platform is talking about things I have dealt with on my own screen since 2023.</p>
+    <div class="seat">
+      <div class="glass">
+        <span class="eyebrow">2023 to Feb 2026</span>
+        <h3>Live on Binance</h3>
+        <p>Perpetual futures on margin, with my own money. KYC, deposits and withdrawals handled myself. Perpetuals carry much of a CFD account's logic: margin, liquidation levels and a recurring cost for holding a position.</p>
+      </div>
+      <div class="glass">
+        <span class="eyebrow">Prop-firm demo accounts</span>
+        <h3>Prop-firm challenges</h3>
+        <p>CryptoFundTrader, Klein and FTMO, on Bybit demo and on MT5 demo. One CryptoFundTrader $10,000 challenge passed Phase 1 at +8.3%. Daily loss limits and drawdown rules decide whether an account survives.</p>
+      </div>
+      <div class="glass">
+        <span class="eyebrow">Backtesting</span>
+        <h3>Gold, costed night by night</h3>
+        <p>The later trades in my 297-trade Gold log carry commission and swap for each night held, including Thursday's triple charge. A volatility idea failed its confirmation test on live trades, so it never became a rule.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tinted" aria-label="Key figures">
+  <div class="wrap">
+    <h2>Checked by someone else, or counted line by line</h2>
+    <div class="rings">
+      <div class="ring">
+        <div class="ring-box"><svg viewBox="0 0 120 120" aria-hidden="true"><circle class="bg" cx="60" cy="60" r="52"/><circle class="fg" cx="60" cy="60" r="52" data-frac=".9871"/></svg><span class="ring-val" data-count="98.71" data-dec="2" data-suffix="%">98.71%</span></div>
+        <p>NSF food-safety audit, an independent inspection, with no critical findings</p>
+      </div>
+      <div class="ring">
+        <div class="ring-box"><svg viewBox="0 0 120 120" aria-hidden="true"><circle class="bg" cx="60" cy="60" r="52"/><circle class="fg" cx="60" cy="60" r="52" data-frac=".999"/></svg><span class="ring-val" data-count="99.9" data-dec="1" data-suffix="%">99.9%</span></div>
+        <p>Full site audit, including 100% for documentation</p>
+      </div>
+      <div class="ring">
+        <div class="ring-box"><svg viewBox="0 0 120 120" aria-hidden="true"><circle class="bg" cx="60" cy="60" r="52"/><circle class="fg" cx="60" cy="60" r="52" data-frac="1"/></svg><span class="ring-val" data-count="13" data-dec="0" data-suffix="">13</span></div>
+        <p>Checkpoints on the travel path, walked every 1.5 to 2 hours</p>
+      </div>
+      <div class="ring">
+        <div class="ring-box"><svg viewBox="0 0 120 120" aria-hidden="true"><circle class="bg" cx="60" cy="60" r="52"/><circle class="fg" cx="60" cy="60" r="52" data-frac="1"/></svg><span class="ring-val" data-count="297" data-dec="0" data-suffix="">297</span></div>
+        <p>Gold replay trades logged one at a time, costs included</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="journal">
+  <div class="wrap">
+    <h2>My trade journal</h2>
+    <p class="lede">Every live-market trade from 7 April to 20 September 2026 went into my trade journal, on prop-firm demo accounts, with prices and times taken from the exchange. Each square below is one calendar day.</p>
+    <div class="journal">
+      <div class="heat glass">
+        <p class="panel-t">Trades logged per day, 7 Apr to 20 Sep 2026</p>
+        <div class="heat-grid" id="heat" role="img" aria-label="Calendar of 85 trading days across 24 weeks"></div>
+        <div class="heat-legend"><span>Rows run Monday to Sunday</span><span>Brighter squares mean more trades that day</span></div>
+      </div>
+      <div class="facts">
+        <div class="fact glass"><b>232</b><span>trades logged, all closed and reconciled to the exchange</span></div>
+        <div class="fact glass"><b>85</b><span>separate trading days</span></div>
+        <div class="fact glass"><b>94</b><span>trades with a written review</span></div>
+        <div class="fact glass"><b>100%</b><span>of trades recorded with a stop</span></div>
+      </div>
+    </div>
+
+    <p class="lede">Alongside the journal: 546 manual backtest trades across 3 strategies, and 8 systematic studies I designed, with AI tools writing the code. I kept the results that went against me.</p>
+    <h3 style="margin-top:44px;font-size:1.4rem">What the journal taught me</h3>
+    <div class="learn">
+      <article class="lesson glass">
+        <svg class="viz anim" viewBox="0 0 320 110" role="img" aria-label="Timeline showing a new trade 36 seconds after a stop-out">
+          <line x1="16" y1="62" x2="304" y2="62" stroke="rgba(160,190,255,.5)" stroke-width="2"/>
+          <circle cx="70" cy="62" r="7" fill="#d9262b"/><circle cx="250" cy="62" r="7" fill="#0068e3"/>
+          <path class="draw" d="M70 42 H250" fill="none" stroke="#0068e3" stroke-width="2.5"/>
+          <text x="160" y="32" text-anchor="middle" class="hi">36 seconds</text>
+          <text x="70" y="90" text-anchor="middle" class="w">22:13:18 stopped</text><text x="250" y="90" text-anchor="middle" class="w">22:13:54 reversed</text>
+        </svg>
+        <h3>Speed after a loss is a warning sign</h3>
+        <p>One stop-out on XRP was followed 36 seconds later by the opposite trade, at the same level and the same size. My journal now tags trades like that, and I review them apart from the rest.</p>
+        <p class="so">At the desk: I can recognise this pattern in account activity.</p>
+      </article>
+      <article class="lesson glass">
+        <svg class="viz anim" viewBox="0 0 320 110" role="img" aria-label="Three quick attempts compared with one patient entry">
+          <g fill="#d9262b"><rect x="24" y="44" width="30" height="18" rx="4"/><rect x="62" y="44" width="30" height="18" rx="4"/><rect x="100" y="44" width="30" height="18" rx="4"/></g>
+          <rect x="190" y="30" width="106" height="32" rx="6" fill="#2fa84f"/>
+          <text x="77" y="88" text-anchor="middle" class="w">Three quick attempts</text><text x="243" y="88" text-anchor="middle" class="w">One entry, one idea</text>
+        </svg>
+        <h3>A stop-out judges the entry</h3>
+        <p>On one idea I pressed the button three times in a night and was stopped each time. The same idea, entered once the next day with a better fill and a tighter stop, ran to target. The analysis had not changed.</p>
+        <p class="so">At the desk: I would read a client's whole sequence, then the last order.</p>
+      </article>
+      <article class="lesson glass">
+        <svg class="viz anim" viewBox="0 0 320 110" role="img" aria-label="Stop placed inside a zone compared with a stop placed beyond it">
+          <rect x="24" y="30" width="110" height="26" fill="rgba(10,122,255,.4)"/><rect x="186" y="30" width="110" height="26" fill="rgba(10,122,255,.4)"/>
+          <line x1="24" y1="50" x2="134" y2="50" stroke="#d9262b" stroke-width="2.5" stroke-dasharray="5 4"/><line x1="186" y1="20" x2="296" y2="20" stroke="#2fa84f" stroke-width="2.5"/>
+          <text x="79" y="84" text-anchor="middle" class="w">Stop in the move's path</text><text x="241" y="84" text-anchor="middle" class="w">Stop beyond the band</text>
+        </svg>
+        <h3>A stop belongs beyond the move</h3>
+        <p>On BCH, one stop sat just past a retest band and was tagged to the cent. The next, placed clear of its band, survived a run that came within 0.20 of it. Being right on direction did not save the first.</p>
+        <p class="so">At the desk: I would check where a client's stop sat before answering.</p>
+      </article>
+      <article class="lesson glass">
+        <svg class="viz anim" viewBox="0 0 320 110" role="img" aria-label="A price line falling after an in-line data release">
+          <line x1="150" y1="14" x2="150" y2="84" stroke="rgba(160,190,255,.5)" stroke-dasharray="4 4"/>
+          <path class="draw" d="M16 44 L60 40 L100 46 L150 42 L176 54 L206 50 L250 68 L304 72" fill="none" stroke="#0068e3" stroke-width="2.5"/>
+          <text x="150" y="102" text-anchor="middle" class="w">CPI: in line with forecast</text>
+        </svg>
+        <h3>Check the calendar before the entry</h3>
+        <p>My note after one loss said the fix was a ten-second calendar check. On 12 August, CPI landed exactly on forecast and crypto still fell in the first hour. My long stopped out 17 minutes after the release.</p>
+        <p class="so">At the desk: I would prepare for margin questions on release days.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<section id="brief">
+  <div class="wrap">
+    <h2>Your brief, my evidence</h2>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>The role needs</th><th>Where to look</th></tr></thead>
+        <tbody>
+          <tr><td>KYC documents handled to procedure</td><td>Status 1, plus my own KYC as a client</td></tr>
+          <tr><td>Own cases through to resolution</td><td>Ran Fresh Bake alone from June 2024, and Birmingham on the General Manager's days off</td></tr>
+          <tr><td>Monitor activity and escalate high-risk cases</td><td>Statuses 2 and 3</td></tr>
+          <tr><td>Investigate discrepancies and system exceptions</td><td>The four records in status 4</td></tr>
+          <tr><td>Internal reporting</td><td>Walked the area manager through the weekly commercial numbers</td></tr>
+          <tr><td>Improve workflows and internal controls</td><td>Kaizen events at four employers, and the tracker in status 5</td></tr>
+          <tr><td>Understanding of trading processes and operational risk</td><td>The client's seat and my trade journal, above</td></tr>
+          <tr><td>Familiarity with MT4/MT5</td><td>MT5 on FTMO's demo accounts</td></tr>
+          <tr><td>Coordinate across teams</td><td>Delivery platforms, the brand owner's auditors, suppliers and HR</td></tr>
+          <tr><td>Fluent Hindi and English, written and spoken</td><td>Both, read, written and spoken at work</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="route">
+  <div class="wrap">
+    <h2>How the two tracks met</h2>
+    <div class="route">
+      <div class="route-text" id="routeText">
+        <p class="on"><b>2018 to 2021 · Gujarat</b>Assistant Operations Manager at a maker of spinning rings for the textile industry. Fishbone analysis and scored weekly 5S audits were part of the job.</p>
+        <p><b>2022 to 2024 · Birmingham</b>An MBA at Aston and a move to the UK. At Greggs my site had no store manager, so I ran it as the manager in practice.</p>
+        <p><b>2023 onwards · My own screen</b>Trading began here, alongside the day job, first as a client and soon as someone testing his own results.</p>
+        <p><b>2024 · Leicester</b>A new brand's first store. I co-developed its training and compliance documents, and ran the store alone from June.</p>
+        <p><b>2024 to 2025 · London, then Birmingham</b>Trained at Shake Shack Canary Wharf, then joined the small management team that opened Birmingham.</p>
+        <p><b>Next · Dubai</b>A role that uses both the operations habit and the client's view of a trading platform.</p>
+      </div>
+      <aside class="route-card glass" aria-label="Route so far">
+        <p class="eyebrow">Route so far</p>
+        <svg viewBox="0 0 300 120" aria-hidden="true">
+          <path class="path-bg" d="M10 100 C60 20 90 110 130 60 S200 20 230 70 S280 90 290 30"/>
+          <path class="path-fg" id="routePath" d="M10 100 C60 20 90 110 130 60 S200 20 230 70 S280 90 290 30"/>
+        </svg>
+        <ul class="route-list" id="routeList">
+          <li class="on">Gujarat: factory</li>
+          <li>Birmingham: MBA, Greggs</li>
+          <li>Markets: client since 2023</li>
+          <li>Leicester: brand launch</li>
+          <li>Birmingham: site opening</li>
+          <li>Dubai</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <h2>Four cases from the floor</h2>
+    <div class="cases">
+      <article class="case glass">
+        <span class="eyebrow">Systems</span>
+        <h3>A tracker in place of memory</h3>
+        <p>Twelve tabs, one for complaints and one for delivery at each of six sites, gave every problem a place to live. My own routine at each complaint was to go to the guest personally, put it right, log it, fix the cause and follow up later.</p>
+      </article>
+      <article class="case glass">
+        <span class="eyebrow">Pressure</span>
+        <h3>The patties that nearly ran out</h3>
+        <p>After a big trading day, a delivery came up short. A forecast at 11:00 showed beef running out by about 18:00 and buns by about 19:00. Friends at other sites sent buns. No one could deliver beef, so I called in cover and drove about 1.5 hours each way. We had 15 patties left when I got back, and traded normally until close.</p>
+      </article>
+      <article class="case glass">
+        <span class="eyebrow">Influence</span>
+        <h3>Youngest at the table</h3>
+        <p>At the Fresh Bake launch, senior colleagues often tried their own approach first. Many of my ideas were adopted after those attempts.</p>
+      </article>
+      <article class="case glass">
+        <span class="eyebrow">People</span>
+        <h3>The hire I nearly turned down</h3>
+        <p>A young man, new to the UK, did not interview smoothly, though he was willing. I hired and trained him, and he later became the store's Assistant Manager.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="habits">
+  <div class="wrap">
+    <h2>Six working habits</h2>
+    <div class="habits">
+      <div class="habit glass" tabindex="0"><h3>Forecast early</h3><p>Check the numbers at the start of the day, before the shelf is empty.</p><small>Used: the 11:00 stock forecast</small></div>
+      <div class="habit glass" tabindex="0"><h3>Do it first, then time it</h3><p>Try each task myself, then coach the team against a realistic time.</p><small>Used: in every role</small></div>
+      <div class="habit glass" tabindex="0"><h3>Pick the source of record</h3><p>Decide which system is the truth before arguing about the difference.</p><small>Used: exchange data over dashboards</small></div>
+      <div class="habit glass" tabindex="0"><h3>Explain the why</h3><p>A daily briefing tells people the purpose of the day and why each task matters.</p><small>Used: daily at Shake Shack</small></div>
+      <div class="habit glass" tabindex="0"><h3>Every corner is mine</h3><p>No "that's the owner's problem" and no "not in my JD". Results count.</p><small>Used: 65 to 70-hour launch weeks at Fresh Bake</small></div>
+      <div class="habit glass" tabindex="0"><h3>Most of a problem counts</h3><p>Problem-solving is a spectrum. Solve what you can now and record what is left.</p><small>Used: since the factory floor</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="plan">
+  <div class="wrap">
+    <h2>The first 90 days</h2>
+    <div class="plan-bar"><i id="planBar"></i></div>
+    <div class="plan">
+      <div><span class="eyebrow">Days 1 to 15</span><h3>Learn</h3><p>Back office, CRM, KYC procedure and the desk's escalation routes.</p></div>
+      <div><span class="eyebrow">Days 16 to 30</span><h3>Ask why</h3><p>Find out why each check exists, and who depends on it.</p></div>
+      <div><span class="eyebrow">Days 31 to 60</span><h3>Fix and test</h3><p>Track where cases stall, then trial one change with the team lead's agreement.</p></div>
+      <div><span class="eyebrow">Days 61 to 90</span><h3>Lock in</h3><p>Write down what worked, so anyone on the desk can run it.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<section id="faq">
+  <div class="wrap">
+    <h2>Questions you might have</h2>
+    <div class="faq">
+      <details open>
+        <summary>Why TMGM?</summary>
+        <div class="answer">
+          <p>TMGM offers over 12,000 products and is hiring a Hindi-speaking operations specialist in Dubai for its MENA clients. A client's trust in a broker is often decided in operations, at the moment a document, a deposit or an account query goes wrong.</p>
+          <p>That is the seat I would want: close to clients who speak my language, with enough of a client's experience to understand the question quickly.</p>
+        </div>
+      </details>
+      <details>
+        <summary>What will I bring with me?</summary>
+        <div class="answer bring">
+          <div><b>Case ownership</b>Taking a problem from first report to a recorded outcome, across several teams.</div>
+          <div><b>Checks and controls</b>Document checks, audits, escalation and procedures an auditor can follow.</div>
+          <div><b>Numbers</b>Weekly reporting, investigating variances and reading a site's accounts.</div>
+          <div><b>Markets knowledge</b>Margin, liquidation, swap, prop-firm rules, and trade logs costed in detail.</div>
+          <div><b>Tools</b>MT5, Binance, Bybit, TradingView, advanced Excel, Power BI, SQL and Python (pandas, NumPy).</div>
+          <div><b>Improvement</b>Kaizen, 5S, fishbone analysis and trackers people use.</div>
+        </div>
+      </details>
+      <details>
+        <summary>UAE work permit</summary>
+        <div class="answer"><p>I would join on a UAE employment visa sponsored by the employer.</p></div>
+      </details>
+      <details>
+        <summary>Relocation and start date</summary>
+        <div class="answer"><p>I will move to Dubai full-time and can start immediately.</p></div>
+      </details>
+      <details>
+        <summary>Why this move?</summary>
+        <div class="answer"><p>Because each step should be bigger than the last. Operations has been my profession and markets my study since 2023, and this role uses both.</p></div>
+      </details>
+      <details>
+        <summary>Languages and qualifications</summary>
+        <div class="answer"><p>Hindi and English, read, written and spoken, plus native Gujarati. MBA in Operations Management, Aston University. B.Tech in Mechanical Engineering. BCS Foundation and Practitioner certificates in business analysis.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<div class="closing">
+  <div class="wrap">
+    <h2>Thank you for reading. I would like to help TMGM's MENA clients get every case closed properly.</h2>
+    <div class="contact">
+      <a href="mailto:urvish.mb@gmail.com">urvish.mb@gmail.com</a>
+      <span>+91 99988 28555</span>
+      <a href="https://www.linkedin.com/in/urvishkumar-badreshiya">linkedin.com/in/urvishkumar-badreshiya</a>
+    </div>
+    <p class="fine">Personal page. Not affiliated with or endorsed by any employer named here. The case-file layout is my own framing of my work. Prop-firm accounts are demo accounts. Diagrams in the lessons are simplified sketches.</p>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var DAYS={"2026-04-07":2,"2026-04-14":3,"2026-04-16":1,"2026-04-20":2,"2026-04-21":3,"2026-05-01":1,"2026-05-03":1,"2026-05-04":1,"2026-05-05":1,"2026-05-06":5,"2026-05-07":4,"2026-05-08":1,"2026-05-11":1,"2026-05-12":3,"2026-05-13":2,"2026-05-14":4,"2026-05-15":5,"2026-05-18":6,"2026-05-19":1,"2026-05-20":4,"2026-05-22":1,"2026-05-24":1,"2026-05-25":3,"2026-05-26":2,"2026-06-01":1,"2026-06-02":1,"2026-06-03":2,"2026-06-04":3,"2026-06-05":2,"2026-06-06":1,"2026-06-07":1,"2026-06-08":7,"2026-06-09":2,"2026-06-10":5,"2026-06-11":3,"2026-06-12":1,"2026-06-13":1,"2026-06-15":3,"2026-06-16":4,"2026-06-17":5,"2026-06-18":2,"2026-06-21":3,"2026-06-22":3,"2026-06-23":2,"2026-06-24":2,"2026-06-25":5,"2026-06-28":1,"2026-06-29":4,"2026-06-30":4,"2026-07-01":3,"2026-07-02":6,"2026-07-04":1,"2026-07-05":2,"2026-07-06":4,"2026-07-07":3,"2026-07-08":4,"2026-07-13":1,"2026-07-23":1,"2026-07-24":1,"2026-07-28":3,"2026-07-29":9,"2026-07-30":2,"2026-07-31":2,"2026-08-02":1,"2026-08-03":1,"2026-08-04":1,"2026-08-05":15,"2026-08-06":3,"2026-08-11":1,"2026-08-12":3,"2026-08-13":1,"2026-08-15":2,"2026-08-16":3,"2026-08-17":5,"2026-08-18":3,"2026-08-19":2,"2026-08-21":1,"2026-09-07":3,"2026-09-08":5,"2026-09-09":2,"2026-09-10":5,"2026-09-11":2,"2026-09-18":2,"2026-09-19":2,"2026-09-20":1};
+  var NS='http://www.w3.org/2000/svg';
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function el(p,n,a,t){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(t)e.textContent=t;p.appendChild(e);return e}
+
+  // Heat calendar: real trade counts per day from the journal
+  (function(){
+    var box=document.getElementById('heat'),d=new Date(Date.UTC(2026,3,6)),end=Date.UTC(2026,8,20);
+    while(d.getTime()<=end){
+      var key=d.toISOString().slice(0,10),n=DAYS[key]||0,i=document.createElement('i');
+      if(n)i.className=n>=5?'l3':n>=3?'l2':'l1';
+      i.title=key+(n?': '+n+' trades':'');
+      box.appendChild(i);d.setUTCDate(d.getUTCDate()+1);
+    }
+  })();
+
+  // 13-point travel path
+  (function(){
+    var s=document.getElementById('pathViz'),cx=160,cy=88,pts=[];
+    for(var i=0;i<13;i++){var a=-Math.PI/2+i/13*Math.PI*2;pts.push([cx+118*Math.cos(a),cy+66*Math.sin(a)])}
+    el(s,'path',{d:'M'+pts.map(function(p){return p[0].toFixed(1)+' '+p[1].toFixed(1)}).join('L')+'Z',fill:'none',stroke:'#0068e3','stroke-width':2,'class':'draw'});
+    pts.forEach(function(p,i){el(s,'circle',{cx:p[0],cy:p[1],r:6,fill:i===0?'#2fa84f':'#0068e3',stroke:'#ffffff','stroke-width':1})});
+    el(s,'text',{x:cx,y:cy-4,'text-anchor':'middle','class':'w'},'13 checkpoints');
+    el(s,'text',{x:cx,y:cy+14,'text-anchor':'middle','class':'hi'},'every 1.5 to 2 hours');
+  })();
+
+  // Six sites, two tabs each
+  (function(){
+    var s=document.getElementById('sitesViz');
+    for(var i=0;i<6;i++){
+      var x=20+(i%3)*98,y=14+Math.floor(i/3)*78;
+      el(s,'rect',{x:x,y:y,width:86,height:64,rx:8,fill:'rgba(10,122,255,.25)',stroke:'rgba(160,190,255,.5)'});
+      el(s,'rect',{x:x+10,y:y+14,width:66,height:10,rx:3,fill:'#0068e3'});
+      el(s,'rect',{x:x+10,y:y+34,width:66,height:10,rx:3,fill:'#2fa84f'});
+    }
+    el(s,'text',{x:20,y:172,'class':'w'},'Complaints + delivery, six sites');
+  })();
+
+  // Candle wall and drifting motes, built from a seeded sequence
+  (function(){
+    var c=document.getElementById('wall'),x=c.getContext('2d'),W=c.width=1500,H=c.height=620,seed=7,p=H*.6;
+    function r(){seed=(seed*16807)%2147483647;return seed/2147483647}
+    for(var i=0;i<92;i++){
+      var o=p,cl=o+(r()-.54)*44,hi=Math.min(o,cl)-r()*22,lo=Math.max(o,cl)+r()*22,px=8+i*16.2;
+      x.strokeStyle=x.fillStyle=cl<o?'#2fa84f':'#d9262b';
+      x.fillRect(px+5,hi,2,lo-hi);x.fillRect(px,Math.min(o,cl),12,Math.max(3,Math.abs(cl-o)));
+      p=Math.max(90,Math.min(H-90,cl));
+    }
+    if(reduce)return;
+    var m=document.getElementById('motes'),g=m.getContext('2d'),ps=[];
+    function size(){m.width=m.clientWidth;m.height=m.clientHeight}
+    size();addEventListener('resize',size);
+    for(var j=0;j<34;j++)ps.push({x:Math.random(),y:Math.random(),v:.00012+Math.random()*.0003,s:.6+Math.random()*1.5});
+    (function tick(){
+      if(!document.hidden){
+        g.clearRect(0,0,m.width,m.height);g.fillStyle='rgba(0,20,137,.4)';
+        ps.forEach(function(q){q.y-=q.v;if(q.y<0)q.y=1;g.beginPath();g.arc(q.x*m.width,q.y*m.height,q.s,0,6.3);g.fill()});
+      }
+      requestAnimationFrame(tick);
+    })();
+  })();
+
+  var C=2*Math.PI*52;
+  var rings=[].slice.call(document.querySelectorAll('.ring .fg'));
+  rings.forEach(function(r){
+    r.style.strokeDasharray=C;
+    r.style.strokeDashoffset=C*(1-parseFloat(r.getAttribute('data-frac')));
+  });
+  function lightList(items,i){items.forEach(function(e,j){e.classList.toggle('on',j<=i)})}
+  var stages=[].slice.call(document.querySelectorAll('[data-stage]'));
+  var labels=[].slice.call(document.querySelectorAll('#trackLabels li'));
+  var paras=[].slice.call(document.querySelectorAll('#routeText p'));
+  var stops=[].slice.call(document.querySelectorAll('#routeList li'));
+  lightList(labels,0);
+  if('IntersectionObserver' in window){
+    var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)lightList(labels,stages.indexOf(e.target))})},{rootMargin:'-40% 0px -50% 0px'});
+    stages.forEach(function(s){so.observe(s)});
+    var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var i=paras.indexOf(e.target);paras.forEach(function(p,j){p.classList.toggle('on',j===i)});lightList(stops,i)}})},{rootMargin:'-45% 0px -45% 0px'});
+    paras.forEach(function(p){ro.observe(p)});
+  }
+  if(reduce||!window.gsap) return;
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.ticker.lagSmoothing(0);
+
+  // Console lies back in space, then flattens as it scrolls up
+  gsap.fromTo('#console',{rotateX:13,scale:.96},{rotateX:0,scale:1,ease:'none',scrollTrigger:{trigger:'.stage3d',start:'top 92%',end:'top 22%',scrub:true}});
+  gsap.to('#wall',{yPercent:-12,ease:'none',scrollTrigger:{start:0,end:1600,scrub:true}});
+  gsap.to('#floor',{y:-90,ease:'none',scrollTrigger:{start:0,end:1600,scrub:true}});
+  gsap.to('#iso',{y:90,ease:'none',scrollTrigger:{start:0,end:1200,scrub:true}});
+  gsap.from('#iso g',{y:36,duration:.9,stagger:.12,ease:'power2.out'});
+  gsap.from('#bars .bar i',{scaleY:0,duration:.9,stagger:.07,ease:'power2.out',delay:.2});
+
+  // Drawn lines trace once when their graphic arrives
+  document.querySelectorAll('.draw').forEach(function(p){
+    var len=p.getTotalLength();
+    gsap.fromTo(p,{strokeDasharray:len,strokeDashoffset:len},{strokeDashoffset:0,duration:1.2,ease:'power2.inOut',immediateRender:false,scrollTrigger:{trigger:p.closest('svg'),start:'top 85%',once:true}});
+  });
+  document.querySelectorAll('#pathViz circle').forEach(function(c,i){
+    gsap.from(c,{scale:.5,transformOrigin:'center',duration:.35,delay:i*.05,ease:'back.out(2)',immediateRender:false,scrollTrigger:{trigger:'#pathViz',start:'top 85%',once:true}});
+  });
+  gsap.from('#heat i',{scale:.6,duration:.3,stagger:{each:.002,from:'start'},ease:'power1.out',immediateRender:false,scrollTrigger:{trigger:'#heat',start:'top 85%',once:true}});
+
+  var path=document.getElementById('routePath');
+  var len=path.getTotalLength();
+  path.style.strokeDasharray=len;
+  gsap.fromTo(path,{strokeDashoffset:len*.8},{strokeDashoffset:0,ease:'none',scrollTrigger:{trigger:'#routeText',start:'top 70%',end:'bottom 60%',scrub:true}});
+  rings.forEach(function(r){
+    gsap.from(r,{strokeDashoffset:C,duration:1.1,ease:'power2.out',immediateRender:false,scrollTrigger:{trigger:r,start:'top 88%',once:true}});
+  });
+  document.querySelectorAll('.ring-val').forEach(function(v){
+    var end=parseFloat(v.getAttribute('data-count')),dec=+v.getAttribute('data-dec'),suf=v.getAttribute('data-suffix'),o={n:0};
+    ScrollTrigger.create({trigger:v,start:'top 88%',once:true,onEnter:function(){
+      gsap.to(o,{n:end,duration:1.1,ease:'power2.out',onUpdate:function(){v.textContent=o.n.toFixed(dec)+suf},onComplete:function(){v.textContent=end.toFixed(dec)+suf}});
+      setTimeout(function(){v.textContent=end.toFixed(dec)+suf},1600);
+    }});
+  });
+  gsap.from('#planBar',{scaleX:0,duration:1.4,ease:'power2.out',immediateRender:false,scrollTrigger:{trigger:'#plan',start:'top 75%',once:true}});
+})();
+</script>
+
+</body>
+</html>
